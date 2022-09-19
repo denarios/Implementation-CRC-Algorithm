@@ -4,3 +4,4 @@ Generate random number say temp. Perform temp % 2. If you get a 0 do not introdu
 Generate another random number say r2. Perform r2 % (m+k). Outcome of this operation would be a number between 0 and (m+k-1). Assume you get a value i as the outcome. Flip the ith bit of m+k. Now send it to the receiver.
 if it is error free server show Yes and print the string of character(original message).
 if message send has some error the server print NO means message is incorrect.
+if message resive at Server side is wrong then client send it till message recieve at server side is corret
