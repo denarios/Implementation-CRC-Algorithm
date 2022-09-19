@@ -82,13 +82,22 @@ socket_client = socket.socket()
 socket_client.connect((host, port))
 
 message = key3
-
 # while message.lower().strip() != 'quit':
 socket_client.send(message.encode())
-# data = socket_client.recv(1024).decode()
-    
-    # print('Received from server: ' + data)
-
-    # message = input(" : ")
-
+data = socket_client.recv(1024).decode()
+while data=="NAK":
+    if temp%2!=0 :
+        flag=1
+    temp4=0
+    if flag==1 :
+        temp4=temp2%length
+    if temp4!=0:
+        if myList[temp4-1]=='1':
+            myList[temp4-1]='0'
+        else:
+            myList[temp4-1]='1'
+        key5=''.join(myList)
+    message1 = key5
+    socket_client.send(message1.encode())
+    data=socket_client.recv(1024).decode()
 socket_client.close()
